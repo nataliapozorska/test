@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  root to: 'home#index'
+  # root 'application#redirect'
+  resources :home, only: [:index]
+  resources :posts, only: [:index, :show, :new, :edit, :create, :update, :destroy]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
