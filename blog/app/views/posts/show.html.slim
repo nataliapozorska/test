@@ -1,0 +1,16 @@
+p
+  b
+    | Nazwa:
+  = @post.name
+p
+  b
+    | Tytuł:
+  = @post.title
+p
+  b
+    | Zawartość:
+  = @post.content
+p
+  = link_to('Edit', edit_post_path(@post))
+p
+  = link_to('Back', posts_path)

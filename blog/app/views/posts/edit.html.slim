@@ -1,3 +1,25 @@
 h1
-  | Edycja postu
+  | Edycja posta
+= form_for(@post) do |f|
+
+  p
+    .col-md-4
+      => f.label :Nazwa
+    = f.text_field :name
+  p
+    .col-md-4
+      => f.label :Tytuł
+    = f.text_field :title
+  p
+    .col-md-4
+      => f.label :zawartość
+    = f.text_area :content
+  p
+    .col-md-4
+      = f.submit "Dodaj"
+
+h4
+  = link_to('Post', @post)
+h4
+  = link_to('Wróć', posts_path)
 
