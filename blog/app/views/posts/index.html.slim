@@ -18,11 +18,11 @@ table
     td
       = post.content
     td
-      = link_to('Show', post)
+      = link_to('Zobacz post', post)
     td
-      = link_to('Edit', edit_post_path(post))
+      = link_to('Edytuj', edit_post_path(post))
     td
-      = link_to('Destroy', post, :confirm => 'Are you sure?', :method => :delete)
+      = link_to('Usuń', post, :confirm => 'Are you sure?', :method => :delete)
 
 br
-  = link_to('New post', new_post_path)
+  = link_to('Nowy post', new_post_path)
