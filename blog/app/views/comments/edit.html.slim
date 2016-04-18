@@ -1,0 +1,17 @@
+.container
+  .row style="margin: 15px"
+    h1 style="color: #2F5282; text-align: center; text-weight: bold; margin-bottom: 40px"
+      | Edycja komentarza
+    = bootstrap_form_for ([@post, @comment]) do |f|
+      .col-md-10
+        = f.text_field :commenter, label: "Użytkownik:"
+        = f.text_area :body, label: "Treść komentarza:"
+      .col-md-2.col-md-offset-9
+        = f.submit "Dodaj"
+  .col-md-6.col-md-offset-3
+    nav style="margin-top: 150px"
+      ul.pager
+        li.previous
+          = link_to('Wróć', post_comments_path(@post))
+        li.next
+          = link_to('Zobacz post', post_comment_path(@post, @comment))
