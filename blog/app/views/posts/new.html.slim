@@ -9,4 +9,8 @@
         = f.text_area :content, rows: 6, hide_label: true, placeholder: "Treść posta..."
       .col-md-2.col-md-offset-9
         = f.submit "Dodaj"
-
+  .col-md-6
+    nav style="margin-top: 150px"
+      ul.pager
+        li.previous
+          = link_to('Wróć', posts_path)

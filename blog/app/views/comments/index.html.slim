@@ -1,0 +1,42 @@
+.container
+  .row style="margin: 15px"
+    h1 style="color: #2F5282; text-align: center; text-weight: bold"
+      | Komentarze dla posta:
+      =< @post.title
+    .col-md-12 style= "margin: 40px"
+      .panel.panel-info
+        .panel-heading
+          = link_to('Nowy komentarz', new_post_comment_path(@post))
+        table.table
+          tr
+            th style= "color: #315688"
+              | Nazwa użytkownika
+            th style= "color: #315688"
+              | Tresć komentarza
+
+          - @comments.each do | comment |
+            tr
+              td style= "color: #315688"
+                = comment.commenter
+              td style= "color: #808080"
+                = comment.body
+              td
+                .dropdown
+                  button.btn.btn-default.dropdown-toggle#dropdownMenu1 type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                    | Menu
+                    span.caret
+                  ul.dropdown-menu aria-labelledby="dropdownMenu1"
+                    li
+                      a
+                        = link_to('Zobacz komentarz', post_comment_path(@post, comment))
+                    li
+                      a
+                        = link_to('Edytuj', edit_post_comment_path(@post, comment))
+                    li
+                      a
+                        = link_to('Usuń', post_comment_path(@post, comment), :confirm => 'Are you sure?', :method => :delete)
+    .col-md-4
+      nav style="margin-top: 150px"
+        ul.pager
+          li.previous
+            = link_to('Wróć do posta', @post)
