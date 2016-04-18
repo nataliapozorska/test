@@ -1,16 +1,25 @@
-p
-  b
-    | Nazwa:
-  = @post.name
-p
-  b
-    | Tytuł:
-  = @post.title
-p
-  b
-    | Zawartość:
-  = @post.content
-p
-  = link_to('Edit', edit_post_path(@post))
-p
-  = link_to('Back', posts_path)
+.container
+  .row style="margin: 15px"
+    h1 style="color: #2F5282; text-align: center; text-weight: bold; margin-bottom: 50px"
+      | Twój post
+    .col-md-6
+      h4 style="color: #2F5282"
+        | TEMAT:
+        =< @post.name
+    .col-md-4.col-md-offset-2
+      h4 style="color: #2F5282"
+        | TYTUŁ:
+        =< @post.title
+    .col-md-12.text-justify
+      h4 style="color: #2F5282; margin-top: 50px"
+        | ZAWARTOŚĆ:
+      p style="color: #808080"
+        =< @post.content
+
+  .col-md-6.col-md-offset-3
+    nav style="margin-top: 150px"
+      ul.pager
+        li.previous
+          = link_to('Wróć', posts_path)
+        li.next
+          = link_to('Edytuj', edit_post_path(@post))

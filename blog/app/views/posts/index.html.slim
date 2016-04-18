@@ -1,28 +1,39 @@
-h1
-  | To sa wszystkie posty
-table
-  tr
-    th
-      | Nazwa
-    th
-      | Tytuł
-    th
-      | Zawartość
-
-- @posts.each do | post |
-  tr
-    td
-      = post.name
-    td
-      = post.title
-    td
-      = post.content
-    td
-      = link_to('Zobacz post', post)
-    td
-      = link_to('Edytuj', edit_post_path(post))
-    td
-      = link_to('Usuń', post, :confirm => 'Are you sure?', :method => :delete)
-
-br
-  = link_to('Nowy post', new_post_path)
+.container
+  .row style="margin: 15px"
+    h1 style="color: #2F5282; text-align: center; text-weight: bold"
+      | Znajdź post który Cię interesuje
+    .col-md-12 style= "margin: 40px"
+      .panel.panel-info
+        .panel-heading
+          = link_to('Nowy post', new_post_path)
+        table.table
+          tr
+            th style= "color: #315688"
+              | TEMAT
+            th style= "color: #315688"
+              | TYTUŁ
+            th style= "color: #315688"
+              | TREŚĆ POSTA
+          - @posts.each do | post |
+            tr
+              th style= "color: #315688"
+                = post.name
+              td style= "color: #315688"
+                = post.title
+              td style= "color: #808080"
+                = post.content
+              td
+                .dropdown
+                  button.btn.btn-default.dropdown-toggle#dropdownMenu1 type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                    | Menu
+                    span.caret
+                  ul.dropdown-menu aria-labelledby="dropdownMenu1"
+                    li
+                      a
+                        = link_to('Zobacz post', post)
+                    li
+                      a
+                        = link_to('Edytuj', edit_post_path(post))
+                    li
+                      a
+                        = link_to('Usuń', post, :confirm => 'Are you sure?', :method => :delete)

@@ -1,25 +1,19 @@
-h1
-  | Edycja posta
-= form_for(@post) do |f|
-
-  p
-    .col-md-4
-      => f.label :Nazwa
-    = f.text_field :name
-  p
-    .col-md-4
-      => f.label :Tytuł
-    = f.text_field :title
-  p
-    .col-md-4
-      => f.label :zawartość
-    = f.text_area :content
-  p
-    .col-md-4
-      = f.submit "Dodaj"
-
-h4
-  = link_to('Post', @post)
-h4
-  = link_to('Wróć', posts_path)
+.container
+  .row style="margin: 15px"
+    h1 style="color: #2F5282; text-align: center; text-weight: bold; margin-bottom: 40px"
+      | Edycja posta
+    = bootstrap_form_for @post, layout: :horizontal do |f|
+      .col-md-10
+        = f.text_field :name, label: "Temat:"
+        = f.text_field :title, label: "Tytuł:"
+        = f.text_area :content, rows: 6, label: "Zawartość:"
+      .col-md-2.col-md-offset-9
+        = f.submit "Dodaj"
+  .col-md-6.col-md-offset-3
+    nav style="margin-top: 150px"
+      ul.pager
+        li.previous
+          = link_to('Wróć', posts_path)
+        li.next
+          = link_to('Zobacz post', @post)
 
