@@ -1,48 +1,47 @@
 class CommentsController < ApplicationController
+
+  before_filter :find_post, :only => [:index, :show, :new, :create, :edit, :update, :destroy]
+
   def index
-    @post = Post.find(params[:post_id])
     @comments = @post.comments
   end
 
   def show
-    @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
   end
 
   def new
-    @post = Post.find(params[:post_id])
     @comment = @post.comments.build
   end
 
   def create
-    @post = Post.find(params[:post_id])
     @comment = @post.comments.build(params_comment)
     if @comment.save
       redirect_to post_comment_url(@post, @comment)
+      flash[:notice] = 'Komentarz został dodany!!!'
     else
       render :action => "new"
     end
   end
 
   def edit
-    @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     if @comment.update(params_comment)
       redirect_to post_comment_url(@post, @comment)
+      flash[:notice] = 'Komentarz został pomyślnie edytowany.'
     else
       render :action => "edit"
     end
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
+    flash[:notice] = 'Komentarz został usunięty.'
     redirect_to post_comments_path(@post)
   end
 
@@ -50,5 +49,9 @@ class CommentsController < ApplicationController
 
   def params_comment
     params.require(:comment).permit(:commenter, :body)
+  end
+
+  def find_post
+    @post = Post.find(params[:post_id])
   end
 end

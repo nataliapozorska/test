@@ -2,15 +2,15 @@
   .row style="margin: 15px"
     h1 style="color: #2F5282; text-align: center; text-weight: bold; margin-bottom: 40px"
       | Nowy komentarz
-
-    = bootstrap_form_for ([@post, @comment]) do |f|
+    = bootstrap_form_for [@post, @comment], layout: :horizontal do |f|
       .col-md-10
         = f.text_field :commenter, hide_label: true, placeholder: "Nazwa użytkownika..."
         = f.text_area :body, rows: 6, hide_label: true, placeholder: "Treść komentarza..."
       .col-md-2.col-md-offset-9
         = f.submit "Dodaj"
+  hr style="margin-top: 150px"
   .col-md-6
-    nav style="margin-top: 150px"
+    nav style="margin-top: 15px"
       ul.pager
         li.previous
-          = link_to('Back', post_comments_path(@post))
+          = link_to('<< Wróć do komentarzy', post_comments_path(@post))

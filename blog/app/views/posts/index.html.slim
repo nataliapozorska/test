@@ -1,7 +1,7 @@
 .container
   .row style="margin: 15px"
     h1 style="color: #2F5282; text-align: center; text-weight: bold"
-      | Znajdź post który Cię interesuje
+      | Wszystkie posty
     .col-md-12 style= "margin: 40px"
       .panel.panel-info
         .panel-heading
@@ -18,7 +18,7 @@
             tr
               th style= "color: #315688"
                 = post.name
-              td style= "color: #315688"
+              td style= "color: #315688; font-style: italic"
                 = post.title
               td style= "color: #808080"
                 = post.content
@@ -36,4 +36,4 @@
                         = link_to('Edytuj', edit_post_path(post))
                     li
                       a
-                        = link_to('Usuń', post, :confirm => 'Are you sure?', :method => :delete)
+                        = link_to('Usuń', post, :method => :delete)

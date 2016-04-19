@@ -6,11 +6,12 @@
       .col-md-10
         = f.text_field :name, hide_label: true, placeholder: "Temat posta..."
         = f.text_field :title, hide_label: true, placeholder: "Tytuł posta..."
-        = f.text_area :content, rows: 6, hide_label: true, placeholder: "Treść posta..."
+        = f.text_area :content, rows: 10, hide_label: true, placeholder: "Treść posta..."
       .col-md-2.col-md-offset-9
         = f.submit "Dodaj"
+  hr style="margin-top: 150px"
   .col-md-6
-    nav style="margin-top: 150px"
+    nav style="margin-top: 15px"
       ul.pager
         li.previous
-          = link_to('Wróć', posts_path)
+          = link_to('<< Wróć do postów', posts_path)
