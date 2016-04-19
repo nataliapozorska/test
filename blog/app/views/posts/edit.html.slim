@@ -6,14 +6,15 @@
       .col-md-10
         = f.text_field :name, label: "Temat:"
         = f.text_field :title, label: "Tytuł:"
-        = f.text_area :content, rows: 6, label: "Treść posta:"
+        = f.text_area :content, rows: 10, label: "Treść posta:"
       .col-md-2.col-md-offset-9
         = f.submit "Dodaj"
+  hr style="margin-top: 70px"
   .col-md-6.col-md-offset-3
-    nav style="margin-top: 150px"
+    nav
       ul.pager
         li.previous
-          = link_to('Wróć', posts_path)
+          = link_to('<< Wróć do posta', posts_path)
         li.next
-          = link_to('Zobacz post', @post)
+          = link_to('Zobacz post >>', @post)
 

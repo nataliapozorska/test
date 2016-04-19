@@ -2,20 +2,21 @@
   .row style="margin: 15px"
     h1 style="color: #2F5282; text-align: center; text-weight: bold; margin-bottom: 50px"
       | Komentarz do:
-      =< @post.title
-    .col-md-6
+      b style="font-style: italic"
+        =< @post.title
+    .col-md-6.col-md-offset-3
       h4 style="color: #2F5282"
         | Użytkownik:
-        =< @comment.commenter
-    .col-md-12.text-justify
-      h4 style="color: #2F5282; margin-top: 50px"
+        b
+          =< @comment.commenter
+      h4 style="color: #2F5282"
         | Komentarz:
-      p style="color: #808080"
-        =< @comment.body
+        b style="color: #808080; font-style: italic"
+          =< @comment.body
   .col-md-6.col-md-offset-3
     nav style="margin-top: 150px"
       ul.pager
         li.previous
-          = link_to('Wróć', post_comments_path(@post))
+          = link_to('<< Wróć do komentarzy', post_comments_path(@post))
         li.next
-          = link_to('Edytuj', edit_post_comment_path(@post, @comment))
+          = link_to('Edytuj komentarz >>', edit_post_comment_path(@post, @comment))

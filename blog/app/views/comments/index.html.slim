@@ -2,7 +2,8 @@
   .row style="margin: 15px"
     h1 style="color: #2F5282; text-align: center; text-weight: bold"
       | Komentarze dla posta:
-      =< @post.title
+      b style= "font-style: italic"
+        =< @post.title
     .col-md-12 style= "margin: 40px"
       .panel.panel-info
         .panel-heading
@@ -18,7 +19,7 @@
             tr
               td style= "color: #315688"
                 = comment.commenter
-              td style= "color: #808080"
+              td style= "color: #808080; font-style: italic"
                 = comment.body
               td
                 .dropdown
@@ -34,9 +35,9 @@
                         = link_to('Edytuj', edit_post_comment_path(@post, comment))
                     li
                       a
-                        = link_to('Usuń', post_comment_path(@post, comment), :confirm => 'Are you sure?', :method => :delete)
-    .col-md-4
-      nav style="margin-top: 150px"
-        ul.pager
-          li.previous
-            = link_to('Wróć do posta', @post)
+                        = link_to('Usuń', post_comment_path(@post, comment), :method => :delete)
+      .col-md-4
+        nav
+          ul.pager
+            li.previous
+              = link_to('<< Wróć do posta', @post)
