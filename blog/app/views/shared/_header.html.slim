@@ -1,0 +1,31 @@
+nav.navbar.navbar-default.navbar-fixed-top style="background-color: #FFFFFF"
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed#button_collapsed type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+      ul.nav.navbar-nav style="margin-top: 10px"
+        li
+          span.title style="color: #808080"
+            ' Kontakt
+          span.glyphicon.glyphicon-phone aria-hidden="true"
+          span.value style="color: #4169E1"
+            ' 999-888-777
+        li.link
+          span.title style="color: #808080"
+            '  Napisz do mnie:
+          span.glyphicon.glyphicon-envelope aria-hidden="true" style="color: #808080"
+          span.value
+            =< raw link_to("natalia.pozorska@cyberkom.pl")
+      ul.nav.navbar-nav.navbar-right
+        li
+          = link_to(home_index_path)
+            i.glyphicon.glyphicon-home
+            ' Strona główna
+        li
+          = link_to(posts_path)
+            i.glyphicon.glyphicon-book
+            | Posty

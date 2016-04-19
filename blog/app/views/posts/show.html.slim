@@ -1,5 +1,5 @@
 .container
-  .row style="margin: 15px"
+  .row style="margin-top: 50px"
     h1 style="color: #2F5282; text-align: center; text-weight: bold; margin-bottom: 50px"
       | Twój post
     .col-md-6
@@ -29,7 +29,7 @@
               = link_to('Edytuj post >>', edit_post_path(@post))
   hr
     .col-md-4
-      h4 style="color: #2F5282; font-weight: bolder"
+      h4 style="color: #2F5282; font-weight: bolder; text-decoration: underline"
         | KOMENTARZE:
       - @post.comments.each do |c|
         p style="color: #2F5282"
