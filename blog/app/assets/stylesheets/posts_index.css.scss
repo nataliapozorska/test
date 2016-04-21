@@ -1,0 +1,27 @@
+section#posts_comments_index {
+  .panel.panel-default {
+    margin: 40px;
+  }
+  th {
+  color: #315688;
+  }
+  li a{
+    color: #808080;
+  }
+  a:hover {
+    color: #22A7F0;
+  }
+  .tit {
+    font-style: italic;
+  }
+  .cont {
+    color: #808080;
+  }
+  hr {
+    margin-top: 150px;
+    color: #2E5182;
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+  }
+}

@@ -1,0 +1,28 @@
+section#abouts {
+  .mar-top {
+    margin-top: 50px;
+  }
+  h1 {
+    margin-bottom: 50px;
+  }
+  h4 {
+    color: #808080;
+  }
+  .justify {
+    text-align: justify;
+  }
+  .right {
+    text-align: right;
+  }
+  p {
+    font-weight: bolder;
+    color: #2F5282;
+  }
+  .polaroid {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  img {width: 100%}
+}

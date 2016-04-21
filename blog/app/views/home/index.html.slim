@@ -1,14 +1,50 @@
-.container
-  .row style="margin-top: 150px"
-    .jumbotron style= "background-color: #FFFFFF"
-      h1 style="color: #2F5282"
-        | Blog Active
-      p style="color: #808080"
-        | Witam! Na blogu znajdziesz wiele przydatnych informacji o tym jak utrzymac formę, wybrac dobrą dietę i utrzymać wagę. Jeżeli bezskutecznie próbujesz schudnąć to trafiłeś w dziesiątkę!
-        span.glyphicon.glyphicon-heart-empty aria-hidden="true"
-      hr
-      p
-        => link_to('Moje posty', posts_path)
-        span.glyphicon.glyphicon-hand-left aria-hidden="true" style="color: #2F5282"
+section#home
+  .container
+    .row
+      .col-md-12
+        .jumbotron
+          h1
+            = image_tag("logo.png")
+          p
+            | Witam!
+            br
+              | Na blogu znajdziesz wiele przydatnych informacji o tym jak utrzymac formę, wybrac dobrą dietę i utrzymać wagę. Jeżeli bezskutecznie próbujesz schudnąć to trafiłeś w dziesiątkę!
+            span.glyphicon.glyphicon-heart-empty aria-hidden="true"
+          hr
+          p
+            span.glyphicon.glyphicon-hand-right aria-hidden="true" style="color: #22A7F0"
+            =< link_to('Moje posty', posts_path)
+  .row.slid
+    .carousel.slide#carousel-example-generic data-ride="carousel"
+      .carousel-inner role="listbox"
+        .item.active
+          .carousel-caption.text-left
+            | slider
+            h4
+              =< link_to('Moje posty >>', posts_path)
+        .item
+          .carousel-caption.text-left
+            | slider 2
+            h4
+              =< link_to('Moje posty >>', posts_path)
+        .item
+          .carousel-caption.text-left
+            | slider 3
+            h4
+              =< link_to('Moje posty >>', posts_path)
+        .item
+          .carousel-caption.text-left
+            | slider 4
+            h4
+              =< link_to('Moje posty >>', posts_path)
+
+
+      a.right.carousel-control.prev href="#carousel-example-generic" role="button" data-slide="prev"
+        span.glyphicon.glyphicon-chevron-left aria-hidden="true"
+        span.sr-only Previous
+      a.right.carousel-control.next href="#carousel-example-generic" role="button" data-slide="next"
+        span.glyphicon.glyphicon-chevron-right aria-hidden="true"
+        span.sr-only Next
+
 
 
