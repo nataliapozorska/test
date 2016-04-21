@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :post do
     resources :comments, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   end
+  resource :about, only: [:show]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

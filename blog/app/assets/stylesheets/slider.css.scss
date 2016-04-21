@@ -1,0 +1,52 @@
+section#slider {
+  background-image: url(image-path('slider/1.jpg'));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#375F9A;
+  margin-bottom:30px;
+  margin-top: 0px;
+
+  .carousel-inner {
+    @media(min-width:970px) {
+      padding-left: 80px;
+    }
+    padding-right: 100px;
+    left: 0px;
+    .prev {
+      left: 100%;
+    }
+    .active.left {
+      left: 100%;
+    }
+    .next {
+      left: -100%;
+    }
+    .active.right {
+      left: -100%;
+    }
+
+  }
+  .carousel-control {
+    width: 0px;
+  }
+  .carousel-caption {
+    text-align: left;
+    bottom: 0px;
+    padding-top: 5px;
+    height: 75px;
+    position:relative;
+    left: 0px;
+  }
+  .prev {
+    margin-right: 70px;
+  }
+  .next {
+    margin-right: 30px;
+  }
+  h4 {
+    color:#FFFFFF;
+  }
+  h4 a {
+    color: #FFF;
+  }
+}

@@ -15,3 +15,24 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+body {
+  background-color: #F5F8FD;
+  background: url("1.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  color: #999999;
+  text-shadow:0 2px 0 #FFF,
+              0 3px 0 #AAA,
+              0 3px 4px #AAA;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 70px;
+}
