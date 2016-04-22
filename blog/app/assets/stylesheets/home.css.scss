@@ -2,7 +2,8 @@ section#home {
   .jumbotron {
     background-color: #fff;
     opacity: 0.8;
-    margin-top: 150px;
+    margin-top: 130px;
+    margin-bottom: 65px;
     h1 {
       color: #2F5282;
       text-align: left;
@@ -25,9 +26,6 @@ section#home {
     }
   }
   .slid {
-   // background-image: url(image-path('slider/6.jpg'));
-   // background-position: center;#C0C0C0
-  //  background-repeat: no-repeat;
     background-color:#54B0E3;
     opacity: 0.6;
     margin-bottom:30px;
@@ -73,10 +71,13 @@ section#home {
     margin-right: 50px;
   }
   h4 {
-    color:#48B2EC;
+    color:#FFF;
   }
   h4 a {
     color: #FFF;
+  }
+  a:hover {
+    color: #EAEAEA;
   }
  }
 }

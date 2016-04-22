@@ -1,21 +1,23 @@
 section#posts_comments_index {
-  .panel.panel-default {
-    margin: 40px;
+  .margin_top {
+    margin-top: 30px;
   }
-  th {
-  color: #315688;
-  }
-  li a{
-    color: #808080;
+  a{
+    color: #22A7F0;
   }
   a:hover {
-    color: #22A7F0;
+    color: #808080;
   }
   .tit {
     font-style: italic;
   }
-  .cont {
-    color: #808080;
+  .nam {
+    color: #999999;
+    text-shadow:0 2px 0 #FFF,
+                0 3px 0 #AAA,
+                0 3px 4px #AAA;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
   hr {
     margin-top: 150px;
@@ -23,5 +25,14 @@ section#posts_comments_index {
     height: 12px;
     border: 0;
     box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+  }
+  .btn-np {
+    margin-left: 18px;
+  }
+  .btn-np {
+    color:#22A7F0;
+  }
+  .img-thu {
+    opacity: 0,7;
   }
 }
