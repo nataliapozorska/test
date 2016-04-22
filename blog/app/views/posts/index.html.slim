@@ -1,41 +1,43 @@
 section#posts_comments_index
   .container
-    .row
-      h1
-        | Zbiór postów
-      .col-md-12
-        .panel.panel-default
-          .panel-heading
-            = link_to('Nowy post', new_post_path)
-          table.table
-            tr
-              th
-                | TEMAT
-              th
-                | TYTUŁ
-              th
-                | TREŚĆ POSTA
-            - @posts.each do | post |
-              tr
-                th
-                  = post.name
-                td.tit
-                  = link_to(post_path(post))
-                    = post.title
-                td.cont
-                  = post.content
-                td
-                  .dropdown
-                    button.btn.btn-default.dropdown-toggle#dropdownMenu1 type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-                      | Menu
-                      span.caret
-                    ul.dropdown-menu aria-labelledby="dropdownMenu1"
-                      li
-                        a
-                          = link_to('Zobacz post', post)
-                      li
-                        a
-                          = link_to('Edytuj', edit_post_path(post))
-                      li
-                        a
-                          = link_to('Usuń', post, :method => :delete)
+    .col-md-12
+      .row
+        h1
+          | Zbiór postów
+    .col-md-12.text-left
+      .row.margin_top
+        = link_to(new_post_path) do
+          button.btn.btn-default.btn-np type="button" aria-label="Left Align"
+            span.glyphicon.glyphicon-pencil aria-hidden="true"
+            | Nowy post
+
+    .col-md-12
+      .row.margin_top
+        - @posts.each do | post |
+          .col-md-4
+            .thumbnail
+              .img-thu
+                = image_tag("s.jpg")
+                .caption
+                  h3.nam
+                    = post.name
+                  p.tit
+                    = link_to(post_path(post))
+                      = post.title
+                  p
+                    .dropdown
+                      button.btn.btn-default.dropdown-toggle#dropdownMenu1 type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                        | Menu
+                        span.caret
+                      ul.dropdown-menu aria-labelledby="dropdownMenu1"
+                        li
+                          a
+                            = link_to('Zobacz post', post)
+                        li
+                          a
+                            = link_to('Edytuj', edit_post_path(post))
+                        li
+                          a
+                            = link_to('Usuń', post, :method => :delete)
+
+

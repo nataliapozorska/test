@@ -1,0 +1,29 @@
+section#footer {
+  color: #929292;
+  font-weight: 700;
+  font-size: 11px;
+  background-color: #FFF;
+  margin-top: 100px;
+  .padding_top {
+    padding-top: 30px;
+  }
+  .bottom {
+    align: bottom;
+    padding-top: 30px;
+  }
+  .shadow {
+    box-shadow: -4px -16px 19px -17px rgba(0,0,0,0.23);
+  }
+   a {
+    font-size:14px;
+    font-weight:400;
+  }
+  li .border {
+    border-left:solid;
+    height:20px;
+    border-left-width: 1px;
+  }
+  hr {
+    margin-top: 50px;
+  }
+}
